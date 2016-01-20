@@ -2,9 +2,13 @@
 (function () {
 
     /* ---------------------------------- Local Variables ---------------------------------- */
+    //handlebar templates
+    var homeTpl = Handlebars.compile($("#home-tpl").html());
+    var employeeListTpl = Handlebars.compile($("#employee-list-tpl").html());
     var service = new EmployeeService();
     service.initialize().done(function () {
         console.log("Service initialized");
+        renderHomeView();
     });
 
     /* --------------------------------- Event Registration -------------------------------- */
@@ -21,22 +25,17 @@
           };
       }
     }, false);
-    $('.search-key').on('keyup', findByName);
-    $('.help-btn').on('click', function() {
-        alert("Employee Directory v3.4");
-    });
 
     /* ---------------------------------- Local Functions ---------------------------------- */
     function findByName() {
         service.findByName($('.search-key').val()).done(function (employees) {
-            var l = employees.length;
-            var e;
-            $('.employee-list').empty();
-            for (var i = 0; i < l; i++) {
-                e = employees[i];
-                $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
-            }
+            //This passes the employees variable returned from the service to the compiled handlebars template
+            $('.content').html(employeeListTpl(employees));
         });
     }
 
+    function renderHomeView() {
+        $('body').html(homeTpl());
+        $('.search-key').on('keyup', findByName);
+    }
 }());
