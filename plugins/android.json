@@ -7,13 +7,13 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.mlhale.workshop"
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.mlhale.workshop"
         },
-        "cordova-plugin-console": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.mlhale.workshop"
         }
     },
