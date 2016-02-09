@@ -18,6 +18,9 @@
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.mlhale.workshop"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.mlhale.workshop"
         }
     },
     "dependent_plugins": {}
