@@ -21,6 +21,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.mlhale.workshop"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.mlhale.workshop"
         }
     },
     "dependent_plugins": {}
